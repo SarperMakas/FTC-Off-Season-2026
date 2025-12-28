@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadıköy FTC Off-Season 2026 | Kaiser Robotics & Conscius Robotics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0a1128;
+            --secondary-color: #1a1f3a;
+            --accent-color: #2d3561;
+            --highlight-color: #e63946;
+            --gold-color: #5cb85c;
+            --green-accent: #66d9a8;
+            --text-light: #ffffff;
+            --text-gray: #b8b8b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(74, 144, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(102, 217, 168, 0.2) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            z-index: 1;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--green-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .collaboration {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            margin-top: 0.5rem;
+            color: var(--green-accent);
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            margin: 2rem 0 0 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(102, 217, 168, 0.3);
+        }
+
+        .countdown-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--green-accent);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 100px;
+        }
+
+        .countdown-value {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--highlight-color);
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--green-accent);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--green-accent), var(--highlight-color));
+            border-radius: 2px;
+        }
+
+        .section-title i {
+            margin-right: 0.5rem;
+            font-size: 2.2rem;
+        }
+
+        /* Section Theme Variants */
+        .section.green-theme .section-title {
+            color: var(--green-accent);
+        }
+
+        .section.green-theme .section-title::after {
+            background: var(--green-accent);
+        }
+
+        .section.green-theme .info-card:hover {
+            box-shadow: 0 10px 30px rgba(102, 217, 168, 0.4);
+            border-color: var(--green-accent);
+        }
+
+        .section.green-theme .info-card h3 {
+            color: var(--green-accent);
+        }
+
+        .section.green-theme .highlight-box {
+            border-color: var(--green-accent);
+        }
+
+        .section.green-theme .highlight-box h3 {
+            color: var(--green-accent);
+        }
+
+        .section.green-theme .map-container {
+            border-color: rgba(102, 217, 168, 0.4);
+        }
+
+        .section.red-theme .section-title {
+            color: var(--highlight-color);
+        }
+
+        .section.red-theme .section-title::after {
+            background: var(--highlight-color);
+        }
+
+        .section.red-theme .info-card:hover {
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.4);
+            border-color: var(--highlight-color);
+        }
+
+        .section.red-theme .info-card h3 {
+            color: var(--highlight-color);
+        }
+
+        .section.red-theme .highlight-box {
+            border-color: var(--highlight-color);
+        }
+
+        .section.red-theme .highlight-box h3 {
+            color: var(--highlight-color);
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.3);
+            border-color: var(--highlight-color);
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 i {
+            margin-right: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .info-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .info-card li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .info-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--green-accent);
+            font-weight: bold;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.15) 0%, rgba(92, 184, 92, 0.15) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border: 2px solid var(--highlight-color);
+        }
+
+        .highlight-box h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .highlight-box h3 i {
+            margin-right: 0.5rem;
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Map Section */
+        .map-container {
+            margin-top: 3rem;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid rgba(102, 217, 168, 0.4);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            display: block;
+        }
+
+        /* Register Button */
+        .register-btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--highlight-color) 0%, #ff6b6b 100%);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(230, 57, 70, 0.6);
+        }
+
+        .register-btn i {
+            margin-right: 0.5rem;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--primary-color);
+            border-top: 2px solid rgba(102, 217, 168, 0.3);
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .language-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+        }
+
+        .language-btn.active {
+            background: var(--green-accent);
+            color: var(--primary-color);
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-team {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--green-accent);
+        }
+
+        footer p {
+            color: var(--text-gray);
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .language-selector {
+                top: 1rem;
+                right: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .language-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .countdown {
+                gap: 1rem;
+            }
+
+            .countdown-value {
+                font-size: 3rem;
+            }
+
+            .logo-container {
+                gap: 1.5rem;
+            }
+
+            .team-name {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-btn active" onclick="changeLanguage('tr')" data-lang="tr">TR</button>
+        <button class="language-btn" onclick="changeLanguage('en')" data-lang="en">EN</button>
+        <button class="language-btn" onclick="changeLanguage('fr')" data-lang="fr">FR</button>
+        <button class="language-btn" onclick="changeLanguage('de')" data-lang="de">DE</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <div class="team-name">Kaiser Robotics #6989</div>
+                <div class="collaboration">×</div>
+                <div class="team-name">Conscius Robotics #10043</div>
+            </div>
+            
+            <h1>Kadıköy FTC Off-Season 2026</h1>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <h2 class="countdown-title">Etkinliğe Kalan Süre</h2>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Gün</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Saat</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Dakika</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Saniye</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Register Button -->
+            <div class="button-container">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeCpuSpS_2dyaCMelb6yWMcox9iwlNV0hNyAqndxoSkNvNZEQ/viewform" target="_blank" class="register-btn" id="registerBtn">
+                    <i class="fas fa-pen-to-square"></i>Kayıt Ol
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="section green-theme">
+        <h2 class="section-title"><i class="fas fa-map-marker-alt"></i>Etkinlik Detayları</h2>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="far fa-calendar"></i>Tarih</h3>
+                <p>7 – 8 Şubat 2026</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-map-pin"></i>Konum</h3>
+                <p>İstanbul Saint-Joseph Fransız Lisesi<br>Kadıköy, İstanbul</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-bullseye"></i>Amaç</h3>
+                <p>Rekabetin, öğrenmenin ve dostluğun ön planda olduğu eşsiz bir deneyim!</p>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.6734775825344!2d29.026886776006973!3d40.98303797135976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab8ee70962d77%3A0xb4a37e2c3c7b1267!2s%C3%96zel%20Saint-Joseph%20Frans%C4%B1z%20Lisesi!5e0!3m2!1str!2str!4v1735403200000!5m2!1str!2str" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Registration Info Section -->
+    <section class="section red-theme">
+        <h2 class="section-title"><i class="fas fa-clipboard-list"></i>Katılım ve Kontenjan Bilgileri</h2>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-money-bill-wave"></i>Kayıt Ücreti</h3>
+                <p style="font-size: 2.5rem; font-weight: bold; color: var(--highlight-color); margin-top: 0.5rem;">5.000 TL</p>
+                <p style="margin-top: 1rem; font-size: 1rem;">Takım başına kayıt ücreti</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-users"></i>Takım Kontenjanı</h3>
+                <p style="font-size: 2.5rem; font-weight: bold; color: var(--highlight-color); margin-top: 0.5rem;">24 Takım</p>
+                <p style="margin-top: 1rem; font-size: 1rem;">İlk başvuran 24 takım asil kabul edilecektir</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-user-friends"></i>Katılımcı Sayısı</h3>
+                <p style="font-size: 2.5rem; font-weight: bold; color: var(--highlight-color); margin-top: 0.5rem;">Maks. 20</p>
+                <p style="margin-top: 1rem; font-size: 1rem;">Takım başına öğrenci sayısı (mentörler hariç)</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3><i class="fas fa-exclamation-triangle"></i>Önemli Bilgi</h3>
+            <p>
+                <strong>İlk başvuran 24 takım asil kabul edilecektir.</strong> Daha sonraki başvurular yedek listeye alınacaktır. 
+                Takım başına katılımcı öğrenci sayısı <strong>maksimum 20 kişi</strong> ile sınırlıdır. Bu sınıra mentörler dahil değildir.
+            </p>
+        </div>
+
+        <div class="highlight-box" style="border-color: var(--green-accent);">
+            <h3 style="color: var(--green-accent);"><i class="fas fa-gift"></i>Özel Çekiliş</h3>
+            <p>
+                <strong>Katılan 3 takım arasında bir çekiliş düzenlenecektir!</strong> Kazanan takım yarışmaya 
+                <strong>tamamen ücretsiz</strong> katılım hakkı kazanacaktır. Şansınızı denemek için hemen kayıt olun!
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section green-theme">
+        <h2 class="section-title"><i class="fas fa-question-circle"></i>Neden Katılmalısınız?</h2>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-robot"></i>Robot Testi</h3>
+                <p>FTC Dünya Şampiyonası öncesinde robotlarınızı gerçek saha koşullarında test edin ve optimize edin.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-chart-line"></i>Strateji Geliştirme</h3>
+                <p>Farklı takımlarla karşılaşarak stratejilerinizi geliştirin ve yeni taktikler deneyin.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-handshake"></i>FIRST Ruhu</h3>
+                <p>Gracious Professionalism ve Coopertition değerleriyle dostluklar kurun ve deneyim paylaşın.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-graduation-cap"></i>Öğrenme</h3>
+                <p>Deneyimli takımlardan öğrenin, bilgi paylaşımında bulunun ve kendinizi geliştirin.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-trophy"></i>Rekabet</h3>
+                <p>Saha deneyimi kazanın ve takımınızı şampiyonaya hazırlayın.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-network-wired"></i>Networking</h3>
+                <p>Türkiye'nin en iyi FTC takımlarıyla tanışın ve iş birlikleri kurun.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logos">
+            <div class="footer-team">KAISER ROBOTICS #6989</div>
+            <div style="color: var(--text-gray);">×</div>
+            <div class="footer-team">CONSCIUS ROBOTICS #10043</div>
+        </div>
+        <p>© 2026 Kadıköy FTC Off-Season | İstanbul Saint-Joseph Fransız Lisesi</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+            Powered by <span style="color: var(--highlight-color);">FIRST</span> Tech Challenge
+        </p>
+    </footer>
+
+    <!-- Countdown Script -->
+    <script>
+        // Translations
+        const translations = {
+            tr: {
+                title: "Kadıköy FTC Off-Season 2026",
+                countdownTitle: "Etkinliğe Kalan Süre",
+                countdownStarted: "Etkinlik Başladı!",
+                days: "Gün",
+                hours: "Saat",
+                minutes: "Dakika",
+                seconds: "Saniye",
+                eventDetails: "Etkinlik Detayları",
+                date: "Tarih",
+                dateValue: "7 – 8 Şubat 2026",
+                location: "Konum",
+                locationValue: "İstanbul Saint-Joseph Fransız Lisesi<br>Kadıköy, İstanbul",
+                goal: "Amaç",
+                goalValue: "Rekabetin, öğrenmenin ve dostluğun ön planda olduğu eşsiz bir deneyim!",
+                registrationInfo: "Katılım ve Kontenjan Bilgileri",
+                registrationFee: "Kayıt Ücreti",
+                registrationFeeDesc: "Takım başına kayıt ücreti",
+                teamQuota: "Takım Kontenjanı",
+                teamQuotaDesc: "İlk başvuran 24 takım asil kabul edilecektir",
+                participantLimit: "Katılımcı Sayısı",
+                participantLimitDesc: "Takım başına öğrenci sayısı (mentörler hariç)",
+                importantInfo: "Önemli Bilgi",
+                importantInfoText: "<strong>İlk başvuran 24 takım asil kabul edilecektir.</strong> Daha sonraki başvurular yedek listeye alınacaktır. Takım başına katılımcı öğrenci sayısı <strong>maksimum 20 kişi</strong> ile sınırlıdır. Bu sınıra mentörler dahil değildir.",
+                specialRaffle: "Özel Çekiliş",
+                specialRaffleText: "<strong>Katılan 3 takım arasında bir çekiliş düzenlenecektir!</strong> Kazanan takım yarışmaya <strong>tamamen ücretsiz</strong> katılım hakkı kazanacaktır. Şansınızı denemek için hemen kayıt olun!",
+                whyJoin: "Neden Katılmalısınız?",
+                robotTest: "Robot Testi",
+                robotTestDesc: "FTC Dünya Şampiyonası öncesinde robotlarınızı gerçek saha koşullarında test edin ve optimize edin.",
+                strategyDev: "Strateji Geliştirme",
+                strategyDevDesc: "Farklı takımlarla karşılaşarak stratejilerinizi geliştirin ve yeni taktikler deneyin.",
+                firstSpirit: "FIRST Ruhu",
+                firstSpiritDesc: "Gracious Professionalism ve Coopertition değerleriyle dostluklar kurun ve deneyim paylaşın.",
+                learning: "Öğrenme",
+                learningDesc: "Deneyimli takımlardan öğrenin, bilgi paylaşımında bulunun ve kendinizi geliştirin.",
+                competition: "Rekabet",
+                competitionDesc: "Saha deneyimi kazanın ve takımınızı şampiyonaya hazırlayın.",
+                networking: "Networking",
+                networkingDesc: "Türkiye'nin en iyi FTC takımlarıyla tanışın ve iş birlikleri kurun.",
+                copyright: "© 2026 Kadıköy FTC Off-Season | İstanbul Saint-Joseph Fransız Lisesi",
+                poweredBy: "Powered by <span style=\"color: var(--highlight-color);\">FIRST</span> Tech Challenge",
+                registerBtn: "Kayıt Ol",
+                formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeCpuSpS_2dyaCMelb6yWMcox9iwlNV0hNyAqndxoSkNvNZEQ/viewform"
+            },
+            en: {
+                title: "Kadıköy FTC Off-Season 2026",
+                countdownTitle: "Time Until Event",
+                countdownStarted: "Event Started!",
+                days: "Days",
+                hours: "Hours",
+                minutes: "Minutes",
+                seconds: "Seconds",
+                eventDetails: "Event Details",
+                date: "Date",
+                dateValue: "February 7 – 8, 2026",
+                location: "Location",
+                locationValue: "Istanbul Saint-Joseph French High School<br>Kadıköy, Istanbul",
+                goal: "Goal",
+                goalValue: "A unique experience where competition, learning, and friendship take center stage!",
+                registrationInfo: "Registration and Quota Information",
+                registrationFee: "Registration Fee",
+                registrationFeeDesc: "Registration fee per team",
+                teamQuota: "Team Quota",
+                teamQuotaDesc: "First 24 teams to register will be accepted",
+                participantLimit: "Participant Limit",
+                participantLimitDesc: "Number of students per team (mentors not included)",
+                importantInfo: "Important Information",
+                importantInfoText: "<strong>The first 24 teams to register will be accepted.</strong> Subsequent applications will be placed on a waiting list. The number of participating students per team is limited to a <strong>maximum of 20 people</strong>. Mentors are not included in this limit.",
+                specialRaffle: "Special Raffle",
+                specialRaffleText: "<strong>A raffle will be held among 3 participating teams!</strong> The winning team will receive <strong>completely free</strong> participation in the competition. Register now to try your luck!",
+                whyJoin: "Why Should You Join?",
+                robotTest: "Robot Testing",
+                robotTestDesc: "Test and optimize your robots under real field conditions before the FTC World Championship.",
+                strategyDev: "Strategy Development",
+                strategyDevDesc: "Develop your strategies and try new tactics by competing with different teams.",
+                firstSpirit: "FIRST Spirit",
+                firstSpiritDesc: "Build friendships and share experiences with the values of Gracious Professionalism and Coopertition.",
+                learning: "Learning",
+                learningDesc: "Learn from experienced teams, share knowledge, and improve yourself.",
+                competition: "Competition",
+                competitionDesc: "Gain field experience and prepare your team for the championship.",
+                networking: "Networking",
+                networkingDesc: "Meet Turkey's best FTC teams and build collaborations.",
+                copyright: "© 2026 Kadıköy FTC Off-Season | Istanbul Saint-Joseph French High School",
+                poweredBy: "Powered by <span style=\"color: var(--highlight-color);\">FIRST</span> Tech Challenge",
+                registerBtn: "Register Now",
+                formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeoIhIEw2TR0CG5C5wz9geP8xhN6bofGcW8khGKEEtlFp47Ag/viewform"
+            },
+            fr: {
+                title: "Kadıköy FTC Hors-Saison 2026",
+                countdownTitle: "Temps Jusqu'à l'Événement",
+                countdownStarted: "L'événement a commencé !",
+                days: "Jours",
+                hours: "Heures",
+                minutes: "Minutes",
+                seconds: "Secondes",
+                eventDetails: "Détails de l'Événement",
+                date: "Date",
+                dateValue: "7 – 8 Février 2026",
+                location: "Lieu",
+                locationValue: "Lycée Français Saint-Joseph d'Istanbul<br>Kadıköy, Istanbul",
+                goal: "Objectif",
+                goalValue: "Une expérience unique où la compétition, l'apprentissage et l'amitié sont au premier plan !",
+                registrationInfo: "Informations sur l'Inscription et le Quota",
+                registrationFee: "Frais d'Inscription",
+                registrationFeeDesc: "Frais d'inscription par équipe",
+                teamQuota: "Quota d'Équipes",
+                teamQuotaDesc: "Les 24 premières équipes inscrites seront acceptées",
+                participantLimit: "Limite de Participants",
+                participantLimitDesc: "Nombre d'étudiants par équipe (mentors non inclus)",
+                importantInfo: "Information Importante",
+                importantInfoText: "<strong>Les 24 premières équipes inscrites seront acceptées.</strong> Les candidatures ultérieures seront placées sur une liste d'attente. Le nombre d'étudiants participants par équipe est limité à un <strong>maximum de 20 personnes</strong>. Les mentors ne sont pas inclus dans cette limite.",
+                specialRaffle: "Tirage au Sort Spécial",
+                specialRaffleText: "<strong>Un tirage au sort sera organisé parmi 3 équipes participantes !</strong> L'équipe gagnante recevra une participation <strong>entièrement gratuite</strong> à la compétition. Inscrivez-vous maintenant pour tenter votre chance !",
+                whyJoin: "Pourquoi Devriez-Vous Participer ?",
+                robotTest: "Test de Robot",
+                robotTestDesc: "Testez et optimisez vos robots dans des conditions réelles avant le Championnat du Monde FTC.",
+                strategyDev: "Développement de Stratégie",
+                strategyDevDesc: "Développez vos stratégies et essayez de nouvelles tactiques en affrontant différentes équipes.",
+                firstSpirit: "Esprit FIRST",
+                firstSpiritDesc: "Créez des amitiés et partagez des expériences avec les valeurs de Gracious Professionalism et Coopertition.",
+                learning: "Apprentissage",
+                learningDesc: "Apprenez des équipes expérimentées, partagez vos connaissances et améliorez-vous.",
+                competition: "Compétition",
+                competitionDesc: "Gagnez de l'expérience sur le terrain et préparez votre équipe pour le championnat.",
+                networking: "Réseautage",
+                networkingDesc: "Rencontrez les meilleures équipes FTC de Turquie et créez des collaborations.",
+                copyright: "© 2026 Kadıköy FTC Hors-Saison | Lycée Français Saint-Joseph d'Istanbul",
+                poweredBy: "Propulsé par <span style=\"color: var(--highlight-color);\">FIRST</span> Tech Challenge",
+                registerBtn: "S'inscrire",
+                formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeAGzhEhEq-gH3HHOuxWhCBDCpLdAKFCxrDIN1B8GSkzPdOLQ/viewform"
+            },
+            de: {
+                title: "Kadıköy FTC Off-Season 2026",
+                countdownTitle: "Zeit bis zur Veranstaltung",
+                countdownStarted: "Veranstaltung hat begonnen!",
+                days: "Tage",
+                hours: "Stunden",
+                minutes: "Minuten",
+                seconds: "Sekunden",
+                eventDetails: "Veranstaltungsdetails",
+                date: "Datum",
+                dateValue: "7. – 8. Februar 2026",
+                location: "Ort",
+                locationValue: "Istanbul Saint-Joseph Französisches Gymnasium<br>Kadıköy, Istanbul",
+                goal: "Ziel",
+                goalValue: "Ein einzigartiges Erlebnis, bei dem Wettbewerb, Lernen und Freundschaft im Vordergrund stehen!",
+                registrationInfo: "Anmelde- und Kontingentinformationen",
+                registrationFee: "Anmeldegebühr",
+                registrationFeeDesc: "Anmeldegebühr pro Team",
+                teamQuota: "Team-Kontingent",
+                teamQuotaDesc: "Die ersten 24 angemeldeten Teams werden akzeptiert",
+                participantLimit: "Teilnehmerlimit",
+                participantLimitDesc: "Anzahl der Schüler pro Team (Mentoren nicht eingeschlossen)",
+                importantInfo: "Wichtige Information",
+                importantInfoText: "<strong>Die ersten 24 angemeldeten Teams werden akzeptiert.</strong> Nachfolgende Anmeldungen werden auf eine Warteliste gesetzt. Die Anzahl der teilnehmenden Schüler pro Team ist auf <strong>maximal 20 Personen</strong> begrenzt. Mentoren sind in diesem Limit nicht enthalten.",
+                specialRaffle: "Besondere Verlosung",
+                specialRaffleText: "<strong>Unter 3 teilnehmenden Teams wird eine Verlosung durchgeführt!</strong> Das Gewinnerteam erhält eine <strong>völlig kostenlose</strong> Teilnahme am Wettbewerb. Melden Sie sich jetzt an, um Ihr Glück zu versuchen!",
+                whyJoin: "Warum Sollten Sie Teilnehmen?",
+                robotTest: "Robotertest",
+                robotTestDesc: "Testen und optimieren Sie Ihre Roboter unter realen Feldbedingungen vor der FTC-Weltmeisterschaft.",
+                strategyDev: "Strategieentwicklung",
+                strategyDevDesc: "Entwickeln Sie Ihre Strategien und probieren Sie neue Taktiken aus, indem Sie gegen verschiedene Teams antreten.",
+                firstSpirit: "FIRST-Geist",
+                firstSpiritDesc: "Knüpfen Sie Freundschaften und teilen Sie Erfahrungen mit den Werten von Gracious Professionalism und Coopertition.",
+                learning: "Lernen",
+                learningDesc: "Lernen Sie von erfahrenen Teams, teilen Sie Wissen und verbessern Sie sich.",
+                competition: "Wettbewerb",
+                competitionDesc: "Sammeln Sie Felderfahrung und bereiten Sie Ihr Team auf die Meisterschaft vor.",
+                networking: "Networking",
+                networkingDesc: "Treffen Sie die besten FTC-Teams der Türkei und bauen Sie Kooperationen auf.",
+                copyright: "© 2026 Kadıköy FTC Off-Season | Istanbul Saint-Joseph Französisches Gymnasium",
+                poweredBy: "Unterstützt von <span style=\"color: var(--highlight-color);\">FIRST</span> Tech Challenge",
+                registerBtn: "Jetzt Anmelden",
+                formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeoIhIEw2TR0CG5C5wz9geP8xhN6bofGcW8khGKEEtlFp47Ag/viewform"
+            }
+        };
+
+        let currentLang = 'tr';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+
+            // Update active button
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+
+            // Update content
+            document.querySelector('h1').textContent = t.title;
+            document.querySelector('.countdown-title').textContent = t.countdownTitle;
+            document.querySelectorAll('.countdown-label')[0].textContent = t.days;
+            document.querySelectorAll('.countdown-label')[1].textContent = t.hours;
+            document.querySelectorAll('.countdown-label')[2].textContent = t.minutes;
+            document.querySelectorAll('.countdown-label')[3].textContent = t.seconds;
+
+            // Event Details Section
+            document.querySelectorAll('.section-title')[0].innerHTML = `<i class="fas fa-map-marker-alt"></i>${t.eventDetails}`;
+            document.querySelectorAll('.info-card h3')[0].innerHTML = `<i class="far fa-calendar"></i>${t.date}`;
+            document.querySelectorAll('.info-card p')[0].textContent = t.dateValue;
+            document.querySelectorAll('.info-card h3')[1].innerHTML = `<i class="fas fa-map-pin"></i>${t.location}`;
+            document.querySelectorAll('.info-card p')[1].innerHTML = t.locationValue;
+            document.querySelectorAll('.info-card h3')[2].innerHTML = `<i class="fas fa-bullseye"></i>${t.goal}`;
+            document.querySelectorAll('.info-card p')[2].textContent = t.goalValue;
+
+            // Registration Info Section
+            document.querySelectorAll('.section-title')[1].innerHTML = `<i class="fas fa-clipboard-list"></i>${t.registrationInfo}`;
+            document.querySelectorAll('.info-card h3')[3].innerHTML = `<i class="fas fa-money-bill-wave"></i>${t.registrationFee}`;
+            document.querySelectorAll('.info-card p')[4].textContent = t.registrationFeeDesc;
+            document.querySelectorAll('.info-card h3')[4].innerHTML = `<i class="fas fa-users"></i>${t.teamQuota}`;
+            document.querySelectorAll('.info-card p')[6].textContent = t.teamQuotaDesc;
+            document.querySelectorAll('.info-card h3')[5].innerHTML = `<i class="fas fa-user-friends"></i>${t.participantLimit}`;
+            document.querySelectorAll('.info-card p')[8].textContent = t.participantLimitDesc;
+            document.querySelectorAll('.highlight-box h3')[0].innerHTML = `<i class="fas fa-exclamation-triangle"></i>${t.importantInfo}`;
+            document.querySelectorAll('.highlight-box p')[0].innerHTML = t.importantInfoText;
+            document.querySelectorAll('.highlight-box h3')[1].innerHTML = `<i class="fas fa-gift"></i>${t.specialRaffle}`;
+            document.querySelectorAll('.highlight-box p')[1].innerHTML = t.specialRaffleText;
+
+            // Why Join Section
+            document.querySelectorAll('.section-title')[2].innerHTML = `<i class="fas fa-question-circle"></i>${t.whyJoin}`;
+            document.querySelectorAll('.info-card h3')[6].innerHTML = `<i class="fas fa-robot"></i>${t.robotTest}`;
+            document.querySelectorAll('.info-card p')[9].textContent = t.robotTestDesc;
+            document.querySelectorAll('.info-card h3')[7].innerHTML = `<i class="fas fa-chart-line"></i>${t.strategyDev}`;
+            document.querySelectorAll('.info-card p')[10].textContent = t.strategyDevDesc;
+            document.querySelectorAll('.info-card h3')[8].innerHTML = `<i class="fas fa-handshake"></i>${t.firstSpirit}`;
+            document.querySelectorAll('.info-card p')[11].textContent = t.firstSpiritDesc;
+            document.querySelectorAll('.info-card h3')[9].innerHTML = `<i class="fas fa-graduation-cap"></i>${t.learning}`;
+            document.querySelectorAll('.info-card p')[12].textContent = t.learningDesc;
+            document.querySelectorAll('.info-card h3')[10].innerHTML = `<i class="fas fa-trophy"></i>${t.competition}`;
+            document.querySelectorAll('.info-card p')[13].textContent = t.competitionDesc;
+            document.querySelectorAll('.info-card h3')[11].innerHTML = `<i class="fas fa-network-wired"></i>${t.networking}`;
+            document.querySelectorAll('.info-card p')[14].textContent = t.networkingDesc;
+
+            // Footer
+            document.querySelectorAll('footer p')[0].textContent = t.copyright;
+            document.querySelectorAll('footer p')[1].innerHTML = t.poweredBy;
+
+            // Register Button
+            const registerBtn = document.getElementById('registerBtn');
+            registerBtn.innerHTML = `<i class="fas fa-pen-to-square"></i>${t.registerBtn}`;
+            registerBtn.href = t.formUrl;
+        }
+
+        // Countdown Timer
+        const eventDate = new Date('February 7, 2026 09:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                const t = translations[currentLang];
+                document.querySelector('.countdown-title').textContent = t.countdownStarted;
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
