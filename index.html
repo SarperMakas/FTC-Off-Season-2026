@@ -428,6 +428,60 @@
             color: var(--green-accent);
         }
 
+        /* Schedule Section */
+        .schedule-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .day-schedule {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(102, 217, 168, 0.3);
+        }
+
+        .day-schedule h3 {
+            font-size: 1.8rem;
+            color: var(--green-accent);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(102, 217, 168, 0.3);
+        }
+
+        .schedule-item {
+            display: flex;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-time {
+            font-weight: bold;
+            color: var(--highlight-color);
+            min-width: 80px;
+            font-size: 1rem;
+        }
+
+        .schedule-event {
+            color: var(--text-light);
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .schedule-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
         footer p {
             color: var(--text-gray);
             margin-top: 1rem;
@@ -619,6 +673,115 @@
         </div>
     </section>
 
+    <!-- Schedule Section -->
+    <section class="section green-theme">
+        <h2 class="section-title"><i class="fas fa-calendar-alt"></i><span class="schedule-title">Gün Planı</span></h2>
+        
+        <div class="schedule-container">
+            <!-- Day 1 -->
+            <div class="day-schedule">
+                <h3 class="day1-title">1. Gün</h3>
+                <div class="schedule-item">
+                    <div class="schedule-time">08:30</div>
+                    <div class="schedule-event event-1-1">Takım Giriş ve Kayıtlarının Başlaması</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">10:00</div>
+                    <div class="schedule-event event-1-2">Robot Teftişlerinin Başlaması</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">10:30</div>
+                    <div class="schedule-event event-1-3">Jüri Mülakatlarının Başlaması</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">11:30</div>
+                    <div class="schedule-event event-1-4">Sürücü Toplantısı ve Soru Cevap Bölümü</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">12:00</div>
+                    <div class="schedule-event event-1-5">Deneme Maçları Başlangıç</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">13:00</div>
+                    <div class="schedule-event event-1-6">Jüri Mülakatları İlk Bölüm Bitiş</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">13:00</div>
+                    <div class="schedule-event event-1-7">Öğle Arası - Yemek</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">14:00</div>
+                    <div class="schedule-event event-1-8">Deneme Maçları - Jüri Mülakatları Devam</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">15:00</div>
+                    <div class="schedule-event event-1-9">Jüri Mülakatları Bitiş</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">16:00</div>
+                    <div class="schedule-event event-1-10">Jüri Pit Görüşmeleri Başlangıç</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">17:30</div>
+                    <div class="schedule-event event-1-11">Deneme Maçları Bitiş</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">18:00</div>
+                    <div class="schedule-event event-1-12">Jüri Pit Görüşmeleri İlk Tur Bitiş</div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-schedule">
+                <h3 class="day2-title">2. Gün</h3>
+                <div class="schedule-item">
+                    <div class="schedule-time">08:30</div>
+                    <div class="schedule-event event-2-1">Takım Girişlerinin Başlaması</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">09:30</div>
+                    <div class="schedule-event event-2-2">Açılış Seremonisi</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">10:15</div>
+                    <div class="schedule-event event-2-3">Sıralama Maçlarının Başlaması</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">10:30</div>
+                    <div class="schedule-event event-2-4">Jüri Pit Görüşmelerinin Başlaması</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">13:00</div>
+                    <div class="schedule-event event-2-5">Öğle Arası - Yemek</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">14:00</div>
+                    <div class="schedule-event event-2-6">Sıralama Maçları 2. Tur</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">14:45</div>
+                    <div class="schedule-event event-2-7">Sıralama Maçları Bitiş - İttifak Seçimi</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">15:00</div>
+                    <div class="schedule-event event-2-8">Jüri Pit Görüşmelerinin Bitişi</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">16:15</div>
+                    <div class="schedule-event event-2-9">Final Maçları Başlama</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">17:50</div>
+                    <div class="schedule-event event-2-10">Ödül Töreni Başlangıç</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">18:30</div>
+                    <div class="schedule-event event-2-11">Bitiş - Pit Alanı Kapanış</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="section green-theme">
         <h2 class="section-title"><i class="fas fa-question-circle"></i>Neden Katılmalısınız?</h2>
@@ -702,6 +865,32 @@
                 importantInfoText: "<strong>İlk başvuran 24 takım asil kabul edilecektir.</strong> Daha sonraki başvurular yedek listeye alınacaktır. Takım başına katılımcı öğrenci sayısı <strong>maksimum 20 kişi</strong> ile sınırlıdır. Bu sınıra mentörler dahil değildir.",
                 specialRaffle: "Özel Çekiliş",
                 specialRaffleText: "<strong>5 Ocak tarihine kadar formu dolduran 3 takım arasında bir çekiliş düzenlenecektir!</strong> Kazanan takım yarışmaya <strong>tamamen ücretsiz</strong> katılım hakkı kazanacaktır. Şansınızı denemek için hemen kayıt olun!",
+                scheduleTitle: "Gün Planı",
+                day1: "1. Gün",
+                day2: "2. Gün",
+                event1_1: "Takım Giriş ve Kayıtlarının Başlaması",
+                event1_2: "Robot Teftişlerinin Başlaması",
+                event1_3: "Jüri Mülakatlarının Başlaması",
+                event1_4: "Sürücü Toplantısı ve Soru Cevap Bölümü",
+                event1_5: "Deneme Maçları Başlangıç",
+                event1_6: "Jüri Mülakatları İlk Bölüm Bitiş",
+                event1_7: "Öğle Arası - Yemek",
+                event1_8: "Deneme Maçları - Jüri Mülakatları Devam",
+                event1_9: "Jüri Mülakatları Bitiş",
+                event1_10: "Jüri Pit Görüşmeleri Başlangıç",
+                event1_11: "Deneme Maçları Bitiş",
+                event1_12: "Jüri Pit Görüşmeleri İlk Tur Bitiş",
+                event2_1: "Takım Girişlerinin Başlaması",
+                event2_2: "Açılış Seremonisi",
+                event2_3: "Sıralama Maçlarının Başlaması",
+                event2_4: "Jüri Pit Görüşmelerinin Başlaması",
+                event2_5: "Öğle Arası - Yemek",
+                event2_6: "Sıralama Maçları 2. Tur",
+                event2_7: "Sıralama Maçları Bitiş - İttifak Seçimi",
+                event2_8: "Jüri Pit Görüşmelerinin Bitişi",
+                event2_9: "Final Maçları Başlama",
+                event2_10: "Ödül Töreni Başlangıç",
+                event2_11: "Bitiş - Pit Alanı Kapanış",
                 whyJoin: "Neden Katılmalısınız?",
                 robotTest: "Robot Testi",
                 robotTestDesc: "FTC Dünya Şampiyonası öncesinde robotlarınızı gerçek saha koşullarında test edin ve optimize edin.",
@@ -749,6 +938,32 @@
                 importantInfoText: "<strong>The first 24 teams to register will be accepted.</strong> Subsequent applications will be placed on a waiting list. The number of participating students per team is limited to a <strong>maximum of 20 people</strong>. Mentors are not included in this limit.",
                 specialRaffle: "Special Raffle",
                 specialRaffleText: "<strong>A raffle will be held among 3 teams who fill out the form by January 5th!</strong> The winning team will receive <strong>completely free</strong> participation in the competition. Register now to try your luck!",
+                scheduleTitle: "Schedule",
+                day1: "Day 1",
+                day2: "Day 2",
+                event1_1: "Team Check-in and Registration Begins",
+                event1_2: "Robot Inspections Begin",
+                event1_3: "Judging Interviews Begin",
+                event1_4: "Driver Meeting and Q&A Session",
+                event1_5: "Practice Matches Begin",
+                event1_6: "Judging Interviews First Session Ends",
+                event1_7: "Lunch Break",
+                event1_8: "Practice Matches - Judging Interviews Continue",
+                event1_9: "Judging Interviews End",
+                event1_10: "Judging Pit Interviews Begin",
+                event1_11: "Practice Matches End",
+                event1_12: "Judging Pit Interviews First Round Ends",
+                event2_1: "Team Check-in Begins",
+                event2_2: "Opening Ceremony",
+                event2_3: "Qualification Matches Begin",
+                event2_4: "Judging Pit Interviews Begin",
+                event2_5: "Lunch Break",
+                event2_6: "Qualification Matches Round 2",
+                event2_7: "Qualification Matches End - Alliance Selection",
+                event2_8: "Judging Pit Interviews End",
+                event2_9: "Finals Matches Begin",
+                event2_10: "Awards Ceremony Begins",
+                event2_11: "End - Pit Area Closes",
                 whyJoin: "Why Should You Join?",
                 robotTest: "Robot Testing",
                 robotTestDesc: "Test and optimize your robots under real field conditions before the FTC World Championship.",
@@ -796,6 +1011,32 @@
                 importantInfoText: "<strong>Les 24 premières équipes inscrites seront acceptées.</strong> Les candidatures ultérieures seront placées sur une liste d'attente. Le nombre d'étudiants participants par équipe est limité à un <strong>maximum de 20 personnes</strong>. Les mentors ne sont pas inclus dans cette limite.",
                 specialRaffle: "Tirage au Sort Spécial",
                 specialRaffleText: "<strong>Un tirage au sort sera organisé parmi 3 équipes qui remplissent le formulaire avant le 5 janvier !</strong> L'équipe gagnante recevra une participation <strong>entièrement gratuite</strong> à la compétition. Inscrivez-vous maintenant pour tenter votre chance !",
+                scheduleTitle: "Programme",
+                day1: "Jour 1",
+                day2: "Jour 2",
+                event1_1: "Début de l'Enregistrement et de l'Inscription des Équipes",
+                event1_2: "Début des Inspections de Robots",
+                event1_3: "Début des Entretiens avec le Jury",
+                event1_4: "Réunion des Pilotes et Session de Questions-Réponses",
+                event1_5: "Début des Matchs d'Essai",
+                event1_6: "Fin de la Première Session des Entretiens avec le Jury",
+                event1_7: "Pause Déjeuner",
+                event1_8: "Matchs d'Essai - Suite des Entretiens avec le Jury",
+                event1_9: "Fin des Entretiens avec le Jury",
+                event1_10: "Début des Entretiens au Stand avec le Jury",
+                event1_11: "Fin des Matchs d'Essai",
+                event1_12: "Fin du Premier Tour des Entretiens au Stand avec le Jury",
+                event2_1: "Début de l'Arrivée des Équipes",
+                event2_2: "Cérémonie d'Ouverture",
+                event2_3: "Début des Matchs de Qualification",
+                event2_4: "Début des Entretiens au Stand avec le Jury",
+                event2_5: "Pause Déjeuner",
+                event2_6: "Matchs de Qualification - 2ème Tour",
+                event2_7: "Fin des Matchs de Qualification - Sélection des Alliances",
+                event2_8: "Fin des Entretiens au Stand avec le Jury",
+                event2_9: "Début des Matchs de Finale",
+                event2_10: "Début de la Cérémonie de Remise des Prix",
+                event2_11: "Fin - Fermeture de la Zone des Stands",
                 whyJoin: "Pourquoi Devriez-Vous Participer ?",
                 robotTest: "Test de Robot",
                 robotTestDesc: "Testez et optimisez vos robots dans des conditions réelles avant le Championnat du Monde FTC.",
@@ -843,6 +1084,32 @@
                 importantInfoText: "<strong>Die ersten 24 angemeldeten Teams werden akzeptiert.</strong> Nachfolgende Anmeldungen werden auf eine Warteliste gesetzt. Die Anzahl der teilnehmenden Schüler pro Team ist auf <strong>maximal 20 Personen</strong> begrenzt. Mentoren sind in diesem Limit nicht enthalten.",
                 specialRaffle: "Besondere Verlosung",
                 specialRaffleText: "<strong>Unter 3 Teams, die das Formular bis zum 5. Januar ausfüllen, wird eine Verlosung durchgeführt!</strong> Das Gewinnerteam erhält eine <strong>völlig kostenlose</strong> Teilnahme am Wettbewerb. Melden Sie sich jetzt an, um Ihr Glück zu versuchen!",
+                scheduleTitle: "Zeitplan",
+                day1: "Tag 1",
+                day2: "Tag 2",
+                event1_1: "Beginn der Team-Anmeldung und Registrierung",
+                event1_2: "Beginn der Roboter-Inspektionen",
+                event1_3: "Beginn der Jury-Interviews",
+                event1_4: "Fahrer-Besprechung und Frage-Antwort-Runde",
+                event1_5: "Beginn der Übungsmatches",
+                event1_6: "Ende der Ersten Jury-Interview-Sitzung",
+                event1_7: "Mittagspause",
+                event1_8: "Übungsmatches - Jury-Interviews Fortgesetzt",
+                event1_9: "Ende der Jury-Interviews",
+                event1_10: "Beginn der Jury-Pit-Gespräche",
+                event1_11: "Ende der Übungsmatches",
+                event1_12: "Ende der Ersten Runde der Jury-Pit-Gespräche",
+                event2_1: "Beginn der Team-Ankunft",
+                event2_2: "Eröffnungszeremonie",
+                event2_3: "Beginn der Qualifikationsmatches",
+                event2_4: "Beginn der Jury-Pit-Gespräche",
+                event2_5: "Mittagspause",
+                event2_6: "Qualifikationsmatches - 2. Runde",
+                event2_7: "Ende der Qualifikationsmatches - Allianz-Auswahl",
+                event2_8: "Ende der Jury-Pit-Gespräche",
+                event2_9: "Beginn der Final-Matches",
+                event2_10: "Beginn der Preisverleihung",
+                event2_11: "Ende - Schließung des Pit-Bereichs",
                 whyJoin: "Warum Sollten Sie Teilnehmen?",
                 robotTest: "Robotertest",
                 robotTestDesc: "Testen und optimieren Sie Ihre Roboter unter realen Feldbedingungen vor der FTC-Weltmeisterschaft.",
@@ -908,8 +1175,36 @@
             document.querySelectorAll('.highlight-box h3')[1].innerHTML = `<i class="fas fa-gift"></i>${t.specialRaffle}`;
             document.querySelectorAll('.highlight-box p')[1].innerHTML = t.specialRaffleText;
 
+            // Schedule Section
+            document.querySelectorAll('.section-title')[2].innerHTML = `<i class="fas fa-calendar-alt"></i>${t.scheduleTitle}`;
+            document.querySelector('.day1-title').textContent = t.day1;
+            document.querySelector('.day2-title').textContent = t.day2;
+            document.querySelector('.event-1-1').textContent = t.event1_1;
+            document.querySelector('.event-1-2').textContent = t.event1_2;
+            document.querySelector('.event-1-3').textContent = t.event1_3;
+            document.querySelector('.event-1-4').textContent = t.event1_4;
+            document.querySelector('.event-1-5').textContent = t.event1_5;
+            document.querySelector('.event-1-6').textContent = t.event1_6;
+            document.querySelector('.event-1-7').textContent = t.event1_7;
+            document.querySelector('.event-1-8').textContent = t.event1_8;
+            document.querySelector('.event-1-9').textContent = t.event1_9;
+            document.querySelector('.event-1-10').textContent = t.event1_10;
+            document.querySelector('.event-1-11').textContent = t.event1_11;
+            document.querySelector('.event-1-12').textContent = t.event1_12;
+            document.querySelector('.event-2-1').textContent = t.event2_1;
+            document.querySelector('.event-2-2').textContent = t.event2_2;
+            document.querySelector('.event-2-3').textContent = t.event2_3;
+            document.querySelector('.event-2-4').textContent = t.event2_4;
+            document.querySelector('.event-2-5').textContent = t.event2_5;
+            document.querySelector('.event-2-6').textContent = t.event2_6;
+            document.querySelector('.event-2-7').textContent = t.event2_7;
+            document.querySelector('.event-2-8').textContent = t.event2_8;
+            document.querySelector('.event-2-9').textContent = t.event2_9;
+            document.querySelector('.event-2-10').textContent = t.event2_10;
+            document.querySelector('.event-2-11').textContent = t.event2_11;
+
             // Why Join Section
-            document.querySelectorAll('.section-title')[2].innerHTML = `<i class="fas fa-question-circle"></i>${t.whyJoin}`;
+            document.querySelectorAll('.section-title')[3].innerHTML = `<i class="fas fa-question-circle"></i>${t.whyJoin}`;
             document.querySelectorAll('.info-card h3')[6].innerHTML = `<i class="fas fa-robot"></i>${t.robotTest}`;
             document.querySelectorAll('.info-card p')[9].textContent = t.robotTestDesc;
             document.querySelectorAll('.info-card h3')[7].innerHTML = `<i class="fas fa-chart-line"></i>${t.strategyDev}`;
