@@ -638,9 +638,9 @@
         
         <div class="info-grid">
             <div class="info-card">
-                <h3><i class="fas fa-money-bill-wave"></i><span class="reg-fee-title">Kayıt Ücreti</span></h3>
-                <p style="font-size: 2.5rem; font-weight: bold; color: var(--highlight-color); margin-top: 0.5rem;">5.000 TL</p>
-                <p style="margin-top: 1rem; font-size: 1rem;" class="reg-fee-desc">Takım başına kayıt ücreti</p>
+                <h3><i class="fas fa-gift"></i><span class="reg-fee-title">Katılım Ücreti</span></h3>
+                <p style="font-size: 2.5rem; font-weight: bold; color: var(--gold-color); margin-top: 0.5rem;" class="reg-fee-value">ÜCRETSİZ</p>
+                <p style="margin-top: 1rem; font-size: 1rem;" class="reg-fee-desc">Etkinliğe katılım tamamen ücretsizdir</p>
             </div>
             
             <div class="info-card">
@@ -852,9 +852,9 @@
                 goal: "Amaç",
                 goalValue: "Rekabetin, öğrenmenin ve dostluğun ön planda olduğu eşsiz bir deneyim!",
                 registrationInfo: "Katılım ve Kontenjan Bilgileri",
-                registrationFee: "Kayıt Ücreti",
-                registrationFeeValue: "5.000 TL",
-                registrationFeeDesc: "Takım başına kayıt ücreti",
+                registrationFee: "Katılım Ücreti",
+                registrationFeeValue: "ÜCRETSİZ",
+                registrationFeeDesc: "Etkinliğe katılım tamamen ücretsizdir",
                 teamQuota: "Takım Kontenjanı",
                 teamQuotaValue: "24 Takım",
                 teamQuotaDesc: "İlk başvuran 24 takım asil kabul edilecektir",
@@ -925,9 +925,9 @@
                 goal: "Goal",
                 goalValue: "A unique experience where competition, learning, and friendship take center stage!",
                 registrationInfo: "Registration and Quota Information",
-                registrationFee: "Registration Fee",
-                registrationFeeValue: "€100",
-                registrationFeeDesc: "Registration fee per team",
+                registrationFee: "Participation Fee",
+                registrationFeeValue: "FREE",
+                registrationFeeDesc: "Event participation is completely free",
                 teamQuota: "Team Quota",
                 teamQuotaValue: "24 Teams",
                 teamQuotaDesc: "First 24 teams to register will be accepted",
@@ -998,9 +998,9 @@
                 goal: "Objectif",
                 goalValue: "Une expérience unique où la compétition, l'apprentissage et l'amitié sont au premier plan !",
                 registrationInfo: "Informations sur l'Inscription et le Quota",
-                registrationFee: "Frais d'Inscription",
-                registrationFeeValue: "€100",
-                registrationFeeDesc: "Frais d'inscription par équipe",
+                registrationFee: "Frais de Participation",
+                registrationFeeValue: "GRATUIT",
+                registrationFeeDesc: "La participation à l'événement est entièrement gratuite",
                 teamQuota: "Quota d'Équipes",
                 teamQuotaValue: "24 Équipes",
                 teamQuotaDesc: "Les 24 premières équipes inscrites seront acceptées",
@@ -1071,9 +1071,9 @@
                 goal: "Ziel",
                 goalValue: "Ein einzigartiges Erlebnis, bei dem Wettbewerb, Lernen und Freundschaft im Vordergrund stehen!",
                 registrationInfo: "Anmelde- und Kontingentinformationen",
-                registrationFee: "Anmeldegebühr",
-                registrationFeeValue: "€100",
-                registrationFeeDesc: "Anmeldegebühr pro Team",
+                registrationFee: "Teilnahmegebühr",
+                registrationFeeValue: "KOSTENLOS",
+                registrationFeeDesc: "Die Teilnahme an der Veranstaltung ist völlig kostenlos",
                 teamQuota: "Team-Kontingent",
                 teamQuotaValue: "24 Teams",
                 teamQuotaDesc: "Die ersten 24 angemeldeten Teams werden akzeptiert",
@@ -1162,7 +1162,7 @@
             // Registration Info Section
             document.querySelectorAll('.section-title')[1].innerHTML = `<i class="fas fa-clipboard-list"></i>${t.registrationInfo}`;
             document.querySelector('.reg-fee-title').textContent = t.registrationFee;
-            document.querySelectorAll('.info-card p')[3].textContent = t.registrationFeeValue;
+            document.querySelector('.reg-fee-value').textContent = t.registrationFeeValue;
             document.querySelector('.reg-fee-desc').textContent = t.registrationFeeDesc;
             document.querySelector('.team-quota-title').textContent = t.teamQuota;
             document.querySelector('.team-quota-value').textContent = t.teamQuotaValue;
